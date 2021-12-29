@@ -4,11 +4,55 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap"
+      rel="stylesheet"
+    />
     <link rel="stylesheet" href="style.css" />
     <title>Wheater App</title>
   </head>
   <body>
-    <h1>Wheater App</h1>
+    <header>
+      <nav class="nav-bar"><h1>Wheater App</h1></nav>
+    </header>
+    <main>
+      <div id="content-div">
+        <h2 id="location"></h2>
+        <h3 id="temp"></h3>
+        <img id="icon" />
+        <h4 id="description"></h4>
+        <ul class="details">
+          <li id="feels-like"></li>
+          <li id="humidity"></li>
+          <li id="visibility"></li>
+        </ul>
+        <button class="modal-btn">Change Location</button>
+      </div>
+    </main>
+    <footer><p>Wheater App &copy;</p></footer>
+    <!-- Modal -->
+    <div class="modal-popup">
+      <div class="modal-header">
+        <h3>Change Location</h3>
+      </div>
+      <div class="modal-body">
+        <form class="modal-form">
+          <div class="form-group">
+            <label for="city">City</label>
+            <input type="text" name="city" id="city" />
+          </div>
+        </form>
+      </div>
+      <div class="modal-footer">
+        <button class="save-btn">Save</button>
+        <button class="cancel-btn">Cancel</button>
+      </div>
+    </div>
+    <script src="storage.js"></script>
+    <script src="weather.js"></script>
+    <script src="ui.js"></script>
     <script src="app.js"></script>
   </body>
 </html>
