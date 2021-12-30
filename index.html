@@ -7,7 +7,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Libre+Franklin&display=swap"
       rel="stylesheet"
     />
     <link rel="stylesheet" href="style.css" />
@@ -17,32 +17,26 @@
     <header>
       <nav class="nav-bar"><h1>Wheater App</h1></nav>
     </header>
-    <main>
+    <main class="main-container">
       <div id="content-div">
         <h2 id="location"></h2>
         <h3 id="temp"></h3>
         <img id="icon" />
         <h4 id="description"></h4>
-        <ul class="details">
-          <li id="feels-like"></li>
-          <li id="humidity"></li>
-          <li id="visibility"></li>
-        </ul>
-        <button class="modal-btn">Change Location</button>
+        <p id="feels-like"></p>
+        <p id="humidity"></p>
+        <button class="change-location-btn">Change Location</button>
       </div>
     </main>
     <footer><p>Wheater App &copy;</p></footer>
     <!-- Modal -->
     <div class="modal-popup">
       <div class="modal-header">
-        <h3>Change Location</h3>
+        <h3>Enter a city</h3>
       </div>
       <div class="modal-body">
         <form class="modal-form">
-          <div class="form-group">
-            <label for="city">City</label>
-            <input type="text" name="city" id="city" />
-          </div>
+          <input type="text" name="city" id="city" placeholder="City" />
         </form>
       </div>
       <div class="modal-footer">
@@ -50,6 +44,7 @@
         <button class="cancel-btn">Cancel</button>
       </div>
     </div>
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <script src="storage.js"></script>
     <script src="weather.js"></script>
     <script src="ui.js"></script>

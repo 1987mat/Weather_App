@@ -10,15 +10,16 @@ class UI {
 
   render(weather) {
     this.location.textContent = weather.name;
-    this.temp.textContent = `${kelvinToFah(weather.main.temp)}\U2109;`;
+    this.temp.textContent = `${kelvinToFah(weather.main.temp)}\u{02109};
+    `;
     this.icon.setAttribute(
       'src',
       `http://openweathermap.org/img/wn/${weather.weather[0].icon}@2x.png`
     );
-    this.description.textContent = `${weather.weather[0].description}`;
+    this.description.textContent = `${weather.weather[0].description.toUpperCase()}`;
     this.feelsLike.textContent = `Feels Like: ${kelvinToFah(
       weather.main.feels_like
-    )}`;
+    )}\u{02109}`;
     this.humidity.textContent = `Humidity: ${weather.main.humidity}%`;
   }
 }
@@ -27,24 +28,3 @@ function kelvinToFah(temp) {
   let f = Math.round((temp * 9) / 5 - 459.67);
   return f;
 }
-
-// const openModalBtn = document.querySelector('.modal-btn');
-// const modal = document.querySelector('.modal-popup');
-// const cityInput = document.getElementById('city');
-// const saveBtn = document.querySelector('.save-btn');
-// const cancelBtn = document.querySelector('.cancel-btn');
-
-// openModalBtn.addEventListener('click', () => {
-//   modal.style.display = 'block';
-// });
-
-// cancelBtn.addEventListener('click', () => {
-//   modal.style.display = 'none';
-//   cityInput.value = '';
-//   stateInput.value = '';
-// });
-
-// saveBtn.addEventListener('click', (e) => {
-//   e.preventDefault();
-//   const city = cityInput.value;
-// });
