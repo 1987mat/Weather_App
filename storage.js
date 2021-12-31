@@ -20,13 +20,3 @@ class Storage {
     localStorage.setItem('city', city);
   }
 }
-
-function onlyLetters(input) {
-  let letters = /^[A-Za-z]+$/;
-  if (letters.test(input)) {
-    return true;
-  } else {
-    alert('Please enter a valid city');
-    return false;
-  }
-}

@@ -1,6 +1,8 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600&display=swap');
+
 * {
   box-sizing: border-box;
-  font-family: 'Libre Franklin', sans-serif;
+  font-family: 'Montserrat', sans-serif;
 }
 
 html,
@@ -11,34 +13,31 @@ body {
 body {
   display: grid;
   grid-template-rows: auto auto auto;
-}
-
-header {
-  background-color: #00bfff;
-  border-bottom: 1px solid black;
-  position: fixed;
-  z-index: 2;
-  top: 0;
-  left: 0;
-  height: 80px;
-  width: 100%;
+  background: rgb(2, 0, 36);
+  background: linear-gradient(
+    90deg,
+    rgba(2, 0, 36, 1) 0%,
+    rgba(0, 251, 255, 1) 85%
+  );
 }
 
 .nav-bar h1 {
-  color: antiquewhite;
-  font-size: 2rem;
-  margin: 20px;
+  color: #989898;
+  font-size: 1.7rem;
+  margin: 10px;
+  font-weight: 600;
 }
 
 #content-div {
   position: relative;
-  top: 60px;
+  bottom: 50px;
   margin: 0 auto;
   border-radius: 5px;
   width: 40%;
   display: flex;
   flex-direction: column;
   align-items: center;
+  z-index: 1;
 }
 
 #content-div h2 {
@@ -55,35 +54,45 @@ header {
   border-radius: 50px;
   height: 3rem;
   width: 70%;
-  background-color: #00bfff;
-  color: white;
+  background-color: #add8e6;
+  color: black;
   font-size: 1rem;
+  font-weight: 600;
   margin-left: 10px;
-  box-shadow: 1px 1px 1px gray;
+  box-shadow: 5px 5px 20px black;
 }
 
 #content-div button:hover {
   cursor: pointer;
+  background-color: lightgray;
+}
+
+.noHover {
+  pointer-events: none;
 }
 
 footer {
   position: fixed;
   bottom: 0;
   left: 0;
-  background-color: #00bfff;
   width: 100%;
   height: 40px;
   text-align: center;
 }
 
 footer p {
-  color: antiquewhite;
+  color: #989898;
   position: relative;
   bottom: 10%;
 }
 
 .modal-popup {
-  background-color: #f5f5f5;
+  background: rgb(2, 0, 36);
+  background: linear-gradient(
+    90deg,
+    rgba(2, 0, 36, 1) 0%,
+    rgba(0, 221, 255, 1) 93%
+  );
   position: absolute;
   left: 450px;
   top: 150px;
@@ -94,21 +103,17 @@ footer p {
   padding: 30px;
   text-align: center;
   border-radius: 5px;
-  box-shadow: 5px 5px 5px black;
-}
-
-.modal-header h3 {
-  margin-top: -10px;
-  color: black;
-  font-size: 1.3rem;
+  box-shadow: inset 0 0 5px;
 }
 
 .modal-form input {
+  background: silver;
   margin: 20px;
-  padding: 5px;
-  height: 30px;
-  width: 70%;
+  padding: 10px;
+  height: 40px;
+  width: 80%;
   border-radius: 5px;
+  font-size: 1rem;
 }
 
 .modal-footer {
@@ -119,12 +124,14 @@ footer p {
 }
 
 .modal-footer button {
-  width: 50%;
-  background-color: white;
+  width: 70%;
+  height: 2rem;
+  background-color: #add8e6;
   padding: 5px;
   border-radius: 50px;
   margin: 5px;
   box-shadow: 1px 1px 1px gray;
+  font-weight: 600;
 }
 
 .modal-footer button:hover {
@@ -138,7 +145,6 @@ footer p {
   }
 
   .nav-bar h1 {
-    color: antiquewhite;
     font-size: 1.2rem;
     margin-top: 10px;
     margin-left: 10px;

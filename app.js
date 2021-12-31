@@ -29,17 +29,20 @@ function renderWeather() {
 }
 
 function onlyLetters(input) {
-  const letters = /^[A-Za-z]+$/;
+  const letters = /^[A-Za-z\s]+$/;
   if (letters.test(input)) {
     return true;
   } else {
     Swal.fire('Please enter a valid city');
+    cityInput.value = '';
     return false;
   }
 }
 
 changeLocationBtn.addEventListener('click', () => {
   modal.style.display = 'block';
+  cityInput.focus();
+  changeLocationBtn.classList.add('noHover');
 });
 
 saveBtn.addEventListener('click', () => {
@@ -52,10 +55,12 @@ saveBtn.addEventListener('click', () => {
   storage.setStorageData(city);
   renderWeather();
   modal.style.display = 'none';
+  changeLocationBtn.classList.remove('noHover');
   cityInput.value = '';
 });
 
 cancelBtn.addEventListener('click', () => {
   modal.style.display = 'none';
+  changeLocationBtn.classList.remove('noHover');
   cityInput.value = '';
 });
