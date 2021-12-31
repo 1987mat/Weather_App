@@ -24,6 +24,7 @@ class UI {
   }
 }
 
+// Convert Kelvin to F
 function kelvinToFah(temp) {
   let f = Math.round((temp * 9) / 5 - 459.67);
   return f;

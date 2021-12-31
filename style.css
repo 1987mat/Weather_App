@@ -28,6 +28,29 @@ body {
   font-weight: 600;
 }
 
+@keyframes spinner {
+  0% {
+    transform: translate3d(-50%, -50%, 0) rotate(0deg);
+  }
+  100% {
+    transform: translate3d(-50%, -50%, 0) rotate(360deg);
+  }
+}
+
+.spinner {
+  display: none;
+  border: 8px solid linen;
+  border-radius: 50%;
+  border-bottom: 8px solid blue;
+  height: 80px;
+  width: 80px;
+  position: absolute;
+  top: 30%;
+  left: 50%;
+  animation: 1.5s linear infinite spinner;
+  transform: translate3d(-50%, -50%, 0);
+}
+
 #content-div {
   position: relative;
   bottom: 50px;

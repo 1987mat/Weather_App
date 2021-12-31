@@ -8,6 +8,7 @@ const cancelBtn = document.querySelector('.cancel-btn');
 // Init storage object
 const storage = new Storage();
 
+// Get city from LS
 const savedLocation = storage.getStorageData();
 
 // Init weather object
@@ -16,6 +17,7 @@ const weather = new Weather(savedLocation.city);
 // Init ui object
 const ui = new UI();
 
+// EVENTS
 document.addEventListener('DOMContentLoaded', renderWeather);
 
 function renderWeather() {
@@ -26,17 +28,6 @@ function renderWeather() {
       Swal.fire('City not found');
     }
   });
-}
-
-function onlyLetters(input) {
-  const letters = /^[A-Za-z\s]+$/;
-  if (letters.test(input)) {
-    return true;
-  } else {
-    Swal.fire('Please enter a valid city');
-    cityInput.value = '';
-    return false;
-  }
 }
 
 changeLocationBtn.addEventListener('click', () => {
@@ -64,3 +55,15 @@ cancelBtn.addEventListener('click', () => {
   changeLocationBtn.classList.remove('noHover');
   cityInput.value = '';
 });
+
+// Input validation
+function onlyLetters(input) {
+  const letters = /^[A-Za-z\s]+$/;
+  if (letters.test(input)) {
+    return true;
+  } else {
+    Swal.fire('Please enter a valid city');
+    cityInput.value = '';
+    return false;
+  }
+}
