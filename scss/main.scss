@@ -17,22 +17,6 @@ $large: 1200px;
   }
 }
 
-/* Spinner Animation */
-@mixin keyframes($name) {
-  @keyframes #{$name} {
-    @content;
-  }
-}
-
-@mixin animate($animation, $duration, $method, $times) {
-  animation: $animation $duration $method $times;
-}
-
-* {
-  box-sizing: border-box;
-  font-family: 'Montserrat', sans-serif;
-}
-
 html {
   @include responsive($phone_port) {
     font-size: 60%;
@@ -53,6 +37,22 @@ html {
   @include responsive(($large)) {
     font-size: 100%;
   }
+}
+
+/* Spinner Animation */
+@mixin keyframes($name) {
+  @keyframes #{$name} {
+    @content;
+  }
+}
+
+@mixin animate($animation, $duration, $method, $times) {
+  animation: $animation $duration $method $times;
+}
+
+* {
+  box-sizing: border-box;
+  font-family: 'Montserrat', sans-serif;
 }
 
 body {
@@ -103,6 +103,64 @@ main {
     left: 50%;
   }
 
+  .modal-popup {
+    background: rgb(2, 0, 36);
+    background: linear-gradient(
+      90deg,
+      rgba(2, 0, 36, 1) 0%,
+      rgba(0, 221, 255, 1) 93%
+    );
+    position: absolute;
+    top: 6em;
+    z-index: 2;
+    display: none;
+    border: 1px solid black;
+    padding: 2em;
+    border-radius: 5px;
+    box-shadow: inset 0 0 5px;
+
+    .modal-container {
+      display: flex;
+      flex-direction: column;
+
+      .modal-form {
+        text-align: center;
+
+        input {
+          background: silver;
+          padding: 0.6em;
+          height: 2.5em;
+          width: 20em;
+          border-radius: 5px;
+          font-size: 1rem;
+        }
+      }
+
+      .modal-footer {
+        display: flex;
+        flex-direction: row;
+        margin-top: 1em;
+
+        button {
+          width: 10em;
+          height: 2rem;
+          background-color: $colorButtons;
+          padding: 0.3em;
+          border-radius: 50px;
+          margin: 0.3em;
+          box-shadow: 1px 1px 1px #000000;
+          font-weight: 600;
+          font-size: 1rem;
+
+          &:hover {
+            cursor: pointer;
+            background-color: $silverColor;
+          }
+        }
+      }
+    }
+  }
+
   #content-div {
     border-radius: 5px;
     width: 40%;
@@ -136,63 +194,6 @@ main {
         cursor: pointer;
         background-color: $silverColor;
         transform: translateY(-2px);
-      }
-    }
-  }
-
-  .modal-popup {
-    background: rgb(2, 0, 36);
-    background: linear-gradient(
-      90deg,
-      rgba(2, 0, 36, 1) 0%,
-      rgba(0, 221, 255, 1) 93%
-    );
-    position: absolute;
-    top: 2em;
-    z-index: 2;
-    display: none;
-    border: 1px solid black;
-    padding: 2em;
-    border-radius: 5px;
-    box-shadow: inset 0 0 5px;
-
-    .modal-container {
-      display: flex;
-      flex-direction: column;
-
-      .modal-form {
-        input {
-          background: silver;
-          margin: 1em;
-          padding: 0.6em;
-          height: 2.5em;
-          width: 20em;
-          border-radius: 5px;
-          font-size: 1rem;
-        }
-      }
-
-      .modal-footer {
-        display: flex;
-        flex-direction: row;
-        margin-top: 1em;
-
-        button {
-          width: 10em;
-          height: 2rem;
-          background-color: $colorButtons;
-          padding: 0.3em;
-          border-radius: 50px;
-          margin: 0.3em;
-          box-shadow: 1px 1px 1px #000000;
-          font-weight: 600;
-          font-size: 1rem;
-
-          &:hover {
-            cursor: pointer;
-            background-color: $silverColor;
-          }
-        }
       }
     }
   }

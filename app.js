@@ -26,6 +26,9 @@ function renderWeather() {
       ui.render(res);
     } catch {
       Swal.fire('City not found');
+      modal.style.display = 'flex';
+      weather.changeLocation('Los Angeles');
+      renderWeather();
     }
   });
 }
