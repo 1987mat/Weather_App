@@ -4,15 +4,33 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
-    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="scss/main.css" />
     <title>Weather App</title>
   </head>
   <body>
     <header>
-      <nav class="nav-bar"><h1>Weather App</h1></nav>
+      <h1>Weather App</h1>
     </header>
+
     <main class="main-container">
+      <!-- Modal -->
+      <div class="modal-popup">
+        <div class="modal-container">
+          <form class="modal-form">
+            <input
+              type="text"
+              name="city"
+              id="city"
+              placeholder="Search Location..."
+              maxlength="20"
+            />
+          </form>
+          <div class="modal-footer">
+            <button class="save-btn">Save</button>
+            <button class="cancel-btn">Cancel</button>
+          </div>
+        </div>
+      </div>
       <div class="spinner"></div>
       <div id="content-div">
         <h2 id="location"></h2>
@@ -25,24 +43,6 @@
       </div>
     </main>
     <footer><p>Weather App &copy;</p></footer>
-    <!-- Modal -->
-    <div class="modal-popup">
-      <div class="modal-body">
-        <form class="modal-form">
-          <input
-            type="text"
-            name="city"
-            id="city"
-            placeholder="Search Location..."
-            maxlength="20"
-          />
-        </form>
-      </div>
-      <div class="modal-footer">
-        <button class="save-btn">Save</button>
-        <button class="cancel-btn">Cancel</button>
-      </div>
-    </div>
     <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <script src="storage.js"></script>
     <script src="weather.js"></script>
