@@ -1,36 +1,4 @@
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600&display=swap");
-/* Media Queries */
-@media only screen and (min-width: 320px) {
-  html {
-    font-size: 60%;
-  }
-}
-
-@media only screen and (min-width: 576px) {
-  html {
-    font-size: 70%;
-  }
-}
-
-@media only screen and (min-width: 768px) {
-  html {
-    font-size: 80%;
-  }
-}
-
-@media only screen and (min-width: 992px) {
-  html {
-    font-size: 90%;
-  }
-}
-
-@media only screen and (min-width: 1200px) {
-  html {
-    font-size: 100%;
-  }
-}
-
-/* Spinner Animation */
 * {
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
@@ -233,5 +201,36 @@ footer p {
 
 .noHover {
   pointer-events: none;
+}
+
+/* MEDIA QUERIES */
+@media only screen and (min-width: 320px) {
+  html {
+    font-size: 60%;
+  }
+}
+
+@media only screen and (min-width: 576px) {
+  html {
+    font-size: 70%;
+  }
+}
+
+@media only screen and (min-width: 768px) {
+  html {
+    font-size: 80%;
+  }
+}
+
+@media only screen and (min-width: 992px) {
+  html {
+    font-size: 90%;
+  }
+}
+
+@media only screen and (min-width: 1200px) {
+  html {
+    font-size: 100%;
+  }
 }
 /*# sourceMappingURL=main.css.map */

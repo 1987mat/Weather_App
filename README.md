@@ -1,1 +1,3 @@
-API Weather App with HTML / CSS / JS ES6 Classes / LOCAL STORAGE
+API Weather App
+
+HTML | SCSS | JS ES6 Classes | LOCAL STORAGE

@@ -1,54 +1,10 @@
+@import 'mediaQueries';
+@import 'loadingSpinner';
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600&display=swap');
 
 $colorTitle: #989898;
 $colorButtons: #add8e6;
 $silverColor: #f5f5f5;
-
-/* Media Queries */
-$phone_port: 320px;
-$phone_land: 576px;
-$tablet: 768px;
-$desktop: 992px;
-$large: 1200px;
-
-@mixin responsive($device) {
-  @media only screen and (min-width: #{$device}) {
-    @content;
-  }
-}
-
-html {
-  @include responsive($phone_port) {
-    font-size: 60%;
-  }
-
-  @include responsive(($phone_land)) {
-    font-size: 70%;
-  }
-
-  @include responsive(($tablet)) {
-    font-size: 80%;
-  }
-
-  @include responsive(($desktop)) {
-    font-size: 90%;
-  }
-
-  @include responsive(($large)) {
-    font-size: 100%;
-  }
-}
-
-/* Spinner Animation */
-@mixin keyframes($name) {
-  @keyframes #{$name} {
-    @content;
-  }
-}
-
-@mixin animate($animation, $duration, $method, $times) {
-  animation: $animation $duration $method $times;
-}
 
 * {
   box-sizing: border-box;
@@ -216,4 +172,27 @@ footer {
 
 .noHover {
   pointer-events: none;
+}
+
+/* MEDIA QUERIES */
+html {
+  @include responsive($phone_port) {
+    font-size: 60%;
+  }
+
+  @include responsive(($phone_land)) {
+    font-size: 70%;
+  }
+
+  @include responsive(($tablet)) {
+    font-size: 80%;
+  }
+
+  @include responsive(($desktop)) {
+    font-size: 90%;
+  }
+
+  @include responsive(($large)) {
+    font-size: 100%;
+  }
 }
