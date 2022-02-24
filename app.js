@@ -25,10 +25,12 @@ function renderWeather() {
     try {
       ui.render(res);
     } catch {
-      Swal.fire('City not found');
+      Swal.fire({ text: 'City not found', confirmButtonColor: '#00008B' });
+
       modal.style.display = 'flex';
       weather.changeLocation('Los Angeles');
       renderWeather();
+      storage.setStorageData('Los Angeles');
     }
   });
 }
@@ -65,8 +67,13 @@ function onlyLetters(input) {
   if (letters.test(input)) {
     return true;
   } else {
-    Swal.fire('Please enter a valid city');
+    Swal.fire({
+      text: 'Please enter a valid city',
+      confirmButtonColor: '#00008B',
+    });
+
     cityInput.value = '';
+    storage.setStorageData('Los Angeles');
     return false;
   }
 }

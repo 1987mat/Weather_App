@@ -118,6 +118,7 @@ main {
   }
 
   #content-div {
+    margin-bottom: 0 !important;
     border-radius: 5px;
     width: 40%;
     display: flex;
@@ -172,6 +173,10 @@ footer {
 
 .noHover {
   pointer-events: none;
+}
+
+.swal-overlay {
+  background-color: rgba(43, 165, 137, 0.45);
 }
 
 /* MEDIA QUERIES */

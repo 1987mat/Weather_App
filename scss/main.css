@@ -139,6 +139,7 @@ main .modal-popup .modal-container .modal-footer button:hover {
 }
 
 main #content-div {
+  margin-bottom: 0 !important;
   border-radius: 5px;
   width: 40%;
   display: -webkit-box;
@@ -201,6 +202,10 @@ footer p {
 
 .noHover {
   pointer-events: none;
+}
+
+.swal-overlay {
+  background-color: rgba(43, 165, 137, 0.45);
 }
 
 /* MEDIA QUERIES */
