@@ -1,6 +1,7 @@
 @import 'mediaQueries';
 @import 'loadingSpinner';
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600&display=swap');
+@import url('//maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css');
 
 $colorTitle: #989898;
 $colorButtons: #add8e6;
@@ -35,7 +36,7 @@ header {
 main {
   display: flex;
   justify-content: center;
-  margin-top: -5em;
+  margin-top: -6em;
 
   .spinner {
     @include keyframes(spinner) {
@@ -64,7 +65,7 @@ main {
     background: linear-gradient(
       90deg,
       rgba(2, 0, 36, 1) 0%,
-      rgba(0, 221, 255, 1) 93%
+      rgba(0, 251, 255, 1) 85%
     );
     position: absolute;
     top: 6em;
@@ -72,41 +73,51 @@ main {
     display: none;
     border: 1px solid black;
     padding: 2em;
-    border-radius: 5px;
+    border-radius: 10px;
     box-shadow: inset 0 0 5px;
 
     .modal-container {
       display: flex;
       flex-direction: column;
+      height: 8em;
 
       .modal-form {
         text-align: center;
 
+        .fa-search {
+          position: absolute;
+          left: 3.2em;
+          top: 2.7em;
+          color: gray;
+        }
+
         input {
-          background: silver;
-          padding: 0.6em;
+          padding-left: 2em;
           height: 2.5em;
           width: 20em;
           border-radius: 5px;
           font-size: 1rem;
+          color: #000000;
         }
       }
 
       .modal-footer {
         display: flex;
         flex-direction: row;
-        margin-top: 1em;
+        margin-top: 2.5em;
 
         button {
           width: 10em;
-          height: 2rem;
+          height: 2.2em;
           background-color: $colorButtons;
           padding: 0.3em;
           border-radius: 50px;
+          border: none;
           margin: 0.3em;
-          box-shadow: 1px 1px 1px #000000;
+          box-shadow: 1px 1px 1px gray;
           font-weight: 600;
           font-size: 1rem;
+          transition: all 0.2s ease-in;
 
           &:hover {
             cursor: pointer;
@@ -138,18 +149,23 @@ main {
     button {
       margin-top: 2em;
       border-radius: 50px;
-      height: 3em;
-      width: 70%;
+      border: none;
+      height: 3.5em;
+      width: 50%;
       background-color: $colorButtons;
       color: #000000;
       font-size: 1rem;
       font-weight: 600;
       margin-left: 0.6em;
-      box-shadow: 5px 5px 20px black;
+      box-shadow: 1px 1px 10px gray;
+      transition: all 0.2s ease-in;
 
       &:hover {
         cursor: pointer;
         background-color: $silverColor;
+      }
+
+      &:active {
         transform: translateY(-2px);
       }
     }
@@ -161,13 +177,14 @@ footer {
   bottom: 0;
   left: 0;
   width: 100%;
-  height: 2.5em;
+  height: 2em;
   text-align: center;
+  font-weight: 600;
 
-  p {
-    color: $colorTitle;
-    position: relative;
-    bottom: 10%;
+  ion-icon {
+    color: #000000;
+    text-decoration: none;
+    font-size: larger;
   }
 }
 
@@ -183,18 +200,78 @@ footer {
 html {
   @include responsive($phone_port) {
     font-size: 60%;
+
+    header {
+      h1 {
+        display: none;
+      }
+    }
+
+    main {
+      margin-top: -2.5em;
+
+      #content-div {
+        button {
+          width: 100%;
+        }
+      }
+    }
+
+    footer {
+      display: none;
+    }
   }
 
   @include responsive(($phone_land)) {
     font-size: 70%;
+
+    main {
+      margin-top: -2em;
+
+      #content-div {
+        button {
+          width: 70%;
+        }
+      }
+    }
   }
 
   @include responsive(($tablet)) {
-    font-size: 80%;
+    font-size: 70%;
+
+    header {
+      h1 {
+        display: block;
+      }
+    }
+
+    main {
+      margin-top: -5.5em;
+
+      #content-div {
+        button {
+          width: 65%;
+        }
+      }
+    }
   }
 
   @include responsive(($desktop)) {
     font-size: 90%;
+
+    main {
+      margin-top: -6em;
+
+      #content-div {
+        button {
+          width: 60%;
+        }
+      }
+    }
+
+    footer {
+      display: block;
+    }
   }
 
   @include responsive(($large)) {

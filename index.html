@@ -5,6 +5,14 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="scss/main.css" />
+    <script
+      type="module"
+      src="https://unpkg.com/ionicons@4.5.10-0/dist/ionicons/ionicons.esm.js"
+    ></script>
+    <script
+      nomodule=""
+      src="https://unpkg.com/ionicons@4.5.10-0/dist/ionicons/ionicons.js"
+    ></script>
     <title>Weather App</title>
   </head>
   <body>
@@ -17,12 +25,13 @@
       <div class="modal-popup">
         <div class="modal-container">
           <form class="modal-form">
+            <span class="fa fa-search"></span>
             <input
-              type="text"
+              type="search"
               name="city"
               id="city"
-              placeholder="Search Location..."
               maxlength="20"
+              placeholder="Search..."
             />
           </form>
           <div class="modal-footer">
@@ -42,7 +51,12 @@
         <button class="change-location-btn">Change Location</button>
       </div>
     </main>
-    <footer><p>Weather App &copy;</p></footer>
+    <footer>
+      Developed by Mat
+      <a href="https://github.com/1987mat" target="_blank">
+        <ion-icon name="logo-github"></ion-icon>
+      </a>
+    </footer>
     <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <script src="storage.js"></script>
     <script src="weather.js"></script>
