@@ -10,6 +10,7 @@ $silverColor: #f5f5f5;
 * {
   box-sizing: border-box;
   font-family: 'Montserrat', sans-serif;
+  color: #202020;
 }
 
 body {
@@ -28,7 +29,7 @@ header {
   h1 {
     color: $colorTitle;
     font-size: 1.7rem;
-    margin: 1em;
+    margin: 0.5em;
     font-weight: 600;
   }
 }
@@ -67,14 +68,15 @@ main {
       rgba(2, 0, 36, 1) 0%,
       rgba(0, 251, 255, 1) 85%
     );
-    position: absolute;
-    top: 6em;
+    position: fixed;
+    top: 10em;
+    height: 12em;
     z-index: 2;
-    display: none;
+    opacity: 0;
     border: 1px solid black;
     padding: 2em;
-    border-radius: 10px;
-    box-shadow: inset 0 0 5px;
+    border-radius: 5px;
+    transition: opacity 0.2s ease-in;
 
     .modal-container {
       display: flex;
@@ -92,29 +94,30 @@ main {
         }
 
         input {
-          padding-left: 2em;
+          padding-left: 3em;
           height: 2.5em;
           width: 20em;
           border-radius: 5px;
           font-size: 1rem;
           color: #000000;
+          border: none;
         }
       }
 
       .modal-footer {
         display: flex;
-        flex-direction: row;
+        justify-content: center;
+        align-items: center;
         margin-top: 2.5em;
 
         button {
-          width: 10em;
+          width: 100%;
           height: 2.2em;
           background-color: $colorButtons;
           padding: 0.3em;
-          border-radius: 50px;
+          border-radius: 5px;
           border: none;
           margin: 0.3em;
-          box-shadow: 1px 1px 1px gray;
           font-weight: 600;
           font-size: 1rem;
           transition: all 0.2s ease-in;
@@ -126,10 +129,14 @@ main {
         }
       }
     }
+
+    &.show {
+      opacity: 1;
+    }
   }
 
   #content-div {
-    margin-bottom: 0 !important;
+    margin-bottom: 2em;
     border-radius: 5px;
     width: 40%;
     display: flex;
@@ -157,7 +164,6 @@ main {
       font-size: 1rem;
       font-weight: 600;
       margin-left: 0.6em;
-      box-shadow: 1px 1px 10px gray;
       transition: all 0.2s ease-in;
 
       &:hover {

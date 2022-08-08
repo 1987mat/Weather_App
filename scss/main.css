@@ -4,6 +4,7 @@
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
   font-family: 'Montserrat', sans-serif;
+  color: #202020;
 }
 
 body {
@@ -20,7 +21,7 @@ body {
 header h1 {
   color: #989898;
   font-size: 1.7rem;
-  margin: 1em;
+  margin: 0.5em;
   font-weight: 600;
 }
 
@@ -76,15 +77,16 @@ main .modal-popup {
   background: #020024;
   background: -webkit-gradient(linear, left top, right top, from(#020024), color-stop(85%, #00fbff));
   background: linear-gradient(90deg, #020024 0%, #00fbff 85%);
-  position: absolute;
-  top: 6em;
+  position: fixed;
+  top: 10em;
+  height: 12em;
   z-index: 2;
-  display: none;
+  opacity: 0;
   border: 1px solid black;
   padding: 2em;
-  border-radius: 10px;
-  -webkit-box-shadow: inset 0 0 5px;
-          box-shadow: inset 0 0 5px;
+  border-radius: 5px;
+  -webkit-transition: opacity 0.2s ease-in;
+  transition: opacity 0.2s ease-in;
 }
 
 main .modal-popup .modal-container {
@@ -110,35 +112,36 @@ main .modal-popup .modal-container .modal-form .fa-search {
 }
 
 main .modal-popup .modal-container .modal-form input {
-  padding-left: 2em;
+  padding-left: 3em;
   height: 2.5em;
   width: 20em;
   border-radius: 5px;
   font-size: 1rem;
   color: #000000;
+  border: none;
 }
 
 main .modal-popup .modal-container .modal-footer {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: row;
-          flex-direction: row;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   margin-top: 2.5em;
 }
 
 main .modal-popup .modal-container .modal-footer button {
-  width: 10em;
+  width: 100%;
   height: 2.2em;
   background-color: #add8e6;
   padding: 0.3em;
-  border-radius: 50px;
+  border-radius: 5px;
   border: none;
   margin: 0.3em;
-  -webkit-box-shadow: 1px 1px 1px gray;
-          box-shadow: 1px 1px 1px gray;
   font-weight: 600;
   font-size: 1rem;
   -webkit-transition: all 0.2s ease-in;
@@ -150,8 +153,12 @@ main .modal-popup .modal-container .modal-footer button:hover {
   background-color: #f5f5f5;
 }
 
+main .modal-popup.show {
+  opacity: 1;
+}
+
 main #content-div {
-  margin-bottom: 0 !important;
+  margin-bottom: 2em;
   border-radius: 5px;
   width: 40%;
   display: -webkit-box;
@@ -187,8 +194,6 @@ main #content-div button {
   font-size: 1rem;
   font-weight: 600;
   margin-left: 0.6em;
-  -webkit-box-shadow: 1px 1px 10px gray;
-          box-shadow: 1px 1px 10px gray;
   -webkit-transition: all 0.2s ease-in;
   transition: all 0.2s ease-in;
 }

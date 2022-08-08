@@ -19,6 +19,17 @@ const ui = new UI();
 
 // EVENTS
 document.addEventListener('DOMContentLoaded', renderWeather);
+document.addEventListener('click', (e) => {
+  if (
+    modal.classList.contains('show') &&
+    !e.target.closest('.modal-popup') &&
+    !e.target.classList.contains('change-location-btn')
+  ) {
+    modal.classList.remove('show');
+    changeLocationBtn.classList.remove('noHover');
+    cityInput.value = '';
+  }
+});
 
 function renderWeather() {
   weather.getWeather().then((res) => {
@@ -36,7 +47,7 @@ function renderWeather() {
 }
 
 changeLocationBtn.addEventListener('click', () => {
-  modal.style.display = 'block';
+  modal.classList.add('show');
   cityInput.focus();
   changeLocationBtn.classList.add('noHover');
 });
@@ -50,13 +61,13 @@ saveBtn.addEventListener('click', () => {
   weather.changeLocation(city);
   storage.setStorageData(city);
   renderWeather();
-  modal.style.display = 'none';
+  modal.classList.remove('show');
   changeLocationBtn.classList.remove('noHover');
   cityInput.value = '';
 });
 
 cancelBtn.addEventListener('click', () => {
-  modal.style.display = 'none';
+  modal.classList.remove('show');
   changeLocationBtn.classList.remove('noHover');
   cityInput.value = '';
 });
