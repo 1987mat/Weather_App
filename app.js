@@ -19,40 +19,40 @@ const ui = new UI();
 
 // EVENTS
 document.addEventListener('DOMContentLoaded', renderWeather);
+
+// Close Modal when clicking anywhere outside
 document.addEventListener('click', (e) => {
   if (
     modal.classList.contains('show') &&
     !e.target.closest('.modal-popup') &&
     !e.target.classList.contains('change-location-btn')
   ) {
-    modal.classList.remove('show');
-    changeLocationBtn.classList.remove('noHover');
-    cityInput.value = '';
+    closeModal();
   }
 });
 
-function renderWeather() {
-  weather.getWeather().then((res) => {
-    try {
-      ui.render(res);
-    } catch {
-      Swal.fire({ text: 'City not found', confirmButtonColor: '#00008B' });
+changeLocationBtn.addEventListener('click', openModal);
+saveBtn.addEventListener('click', submit);
+cancelBtn.addEventListener('click', closeModal);
 
-      modal.style.display = 'flex';
-      weather.changeLocation('Los Angeles');
-      renderWeather();
-      storage.setStorageData('Los Angeles');
-    }
-  });
-}
+// Submit and close modal keydown event
+document.addEventListener('keydown', (e) => {
+  if (modal.classList.contains('show') && e.key == 'Escape') {
+    closeModal();
+  }
 
-changeLocationBtn.addEventListener('click', () => {
+  if (modal.classList.contains('show') && e.key == 'Enter') {
+    submit();
+  }
+});
+
+function openModal() {
   modal.classList.add('show');
   cityInput.focus();
   changeLocationBtn.classList.add('noHover');
-});
+}
 
-saveBtn.addEventListener('click', () => {
+function submit() {
   const city = cityInput.value;
 
   if (city === '') return;
@@ -64,13 +64,28 @@ saveBtn.addEventListener('click', () => {
   modal.classList.remove('show');
   changeLocationBtn.classList.remove('noHover');
   cityInput.value = '';
-});
+}
 
-cancelBtn.addEventListener('click', () => {
+function closeModal() {
   modal.classList.remove('show');
   changeLocationBtn.classList.remove('noHover');
   cityInput.value = '';
-});
+}
+
+function renderWeather() {
+  weather.getWeather().then((res) => {
+    try {
+      ui.render(res);
+    } catch {
+      Swal.fire({ text: 'City not found', confirmButtonColor: '#00008B' });
+      modal.style.display = 'flex';
+      // Set default city
+      weather.changeLocation('Los Angeles');
+      renderWeather();
+      storage.setStorageData('Los Angeles');
+    }
+  });
+}
 
 // Input validation
 function onlyLetters(input) {
