@@ -23,7 +23,7 @@
 
 ## Author
 
-\*_Matteo Calvani_
+**Matteo Calvani**
 
 - [Profile](https://github.com/1987mat 'Matteo Calvani')
 - [Website]("Welcome")
