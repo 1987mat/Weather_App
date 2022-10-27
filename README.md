@@ -14,12 +14,10 @@
 
 ## Built With
 
-- JavaScript ES6
-- Node
-- NPM
-- Webpack
 - HTML
 - SCSS
+- JavaScript
+- Webpack
 
 ## Author
 
