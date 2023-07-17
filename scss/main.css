@@ -1,21 +1,17 @@
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600&display=swap");
 @import url("//maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css");
 * {
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
-  font-family: 'Montserrat', sans-serif;
+  box-sizing: border-box;
+  font-family: "Montserrat", sans-serif;
   color: #202020;
 }
 
 body {
   height: 100vh;
-  display: -ms-grid;
   display: grid;
-  -ms-grid-rows: auto auto auto;
-      grid-template-rows: auto auto auto;
-  background: #020024;
-  background: -webkit-gradient(linear, left top, right top, from(#020024), color-stop(85%, #00fbff));
-  background: linear-gradient(90deg, #020024 0%, #00fbff 85%);
+  grid-template-rows: auto auto auto;
+  background: rgb(2, 0, 36);
+  background: linear-gradient(90deg, rgb(2, 0, 36) 0%, rgb(0, 251, 255) 85%);
 }
 
 header h1 {
@@ -26,91 +22,59 @@ header h1 {
 }
 
 main {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  justify-content: center;
   margin-top: -6em;
 }
-
 main .spinner {
-  -webkit-animation: spinner 1.5s linear infinite;
-          animation: spinner 1.5s linear infinite;
-  -webkit-transform: translate3d(-50%, -50%, 0);
-          transform: translate3d(-50%, -50%, 0);
+  animation: spinner 1.5s linear infinite;
+  transform: translate3d(-50%, -50%, 0);
   display: none;
-  border: 8px solid #f5f5f5;
+  border: 3px solid #f5f5f5;
   border-radius: 50%;
-  border-bottom: 8px solid #0000ff;
+  border-bottom: 3px solid #0000ff;
   height: 5em;
   width: 5em;
   position: absolute;
   top: 30%;
   left: 50%;
 }
-
-@-webkit-keyframes spinner {
-  0% {
-    -webkit-transform: translate3d(-50%, -50%, 0) rotate(0deg);
-            transform: translate3d(-50%, -50%, 0) rotate(0deg);
-  }
-  100% {
-    -webkit-transform: translate3d(-50%, -50%, 0) rotate(360deg);
-            transform: translate3d(-50%, -50%, 0) rotate(360deg);
-  }
-}
-
 @keyframes spinner {
   0% {
-    -webkit-transform: translate3d(-50%, -50%, 0) rotate(0deg);
-            transform: translate3d(-50%, -50%, 0) rotate(0deg);
+    transform: translate3d(-50%, -50%, 0) rotate(0deg);
   }
   100% {
-    -webkit-transform: translate3d(-50%, -50%, 0) rotate(360deg);
-            transform: translate3d(-50%, -50%, 0) rotate(360deg);
+    transform: translate3d(-50%, -50%, 0) rotate(360deg);
   }
 }
-
 main .modal-popup {
-  background: #020024;
-  background: -webkit-gradient(linear, left top, right top, from(#020024), color-stop(85%, #00fbff));
-  background: linear-gradient(90deg, #020024 0%, #00fbff 85%);
+  background: rgb(2, 0, 36);
+  background: linear-gradient(90deg, rgb(2, 0, 36) 0%, rgb(0, 251, 255) 85%);
   position: fixed;
   top: 10em;
   height: 12em;
   z-index: 2;
   opacity: 0;
-  border: 1px solid black;
+  border: none;
   padding: 2em;
   border-radius: 5px;
-  -webkit-transition: opacity 0.2s ease-in;
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
   transition: opacity 0.2s ease-in;
 }
-
 main .modal-popup .modal-container {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
+  flex-direction: column;
   height: 8em;
 }
-
 main .modal-popup .modal-container .modal-form {
   text-align: center;
 }
-
 main .modal-popup .modal-container .modal-form .fa-search {
   position: absolute;
   left: 3.2em;
   top: 2.7em;
   color: gray;
 }
-
 main .modal-popup .modal-container .modal-form input {
   padding-left: 3em;
   height: 2.5em;
@@ -120,20 +84,12 @@ main .modal-popup .modal-container .modal-form input {
   color: #000000;
   border: none;
 }
-
 main .modal-popup .modal-container .modal-footer {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  justify-content: center;
+  align-items: center;
   margin-top: 2.5em;
 }
-
 main .modal-popup .modal-container .modal-footer button {
   width: 100%;
   height: 2.2em;
@@ -144,69 +100,50 @@ main .modal-popup .modal-container .modal-footer button {
   margin: 0.3em;
   font-weight: 600;
   font-size: 1rem;
-  -webkit-transition: all 0.2s ease-in;
   transition: all 0.2s ease-in;
 }
-
 main .modal-popup .modal-container .modal-footer button:hover {
   cursor: pointer;
   background-color: #f5f5f5;
 }
-
 main .modal-popup.show {
   opacity: 1;
 }
-
 main #content-div {
   margin-bottom: 2em;
   border-radius: 5px;
-  width: 40%;
-  display: -webkit-box;
-  display: -ms-flexbox;
+  width: 80%;
   display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  flex-direction: column;
+  align-items: center;
   z-index: 1;
 }
-
 main #content-div h2 {
   font-size: 2.5rem;
   text-align: center;
 }
-
 main #content-div p {
   margin-top: -0.3em;
   font-size: 90%;
 }
-
 main #content-div button {
   margin-top: 2em;
   border-radius: 50px;
   border: none;
-  height: 3.5em;
-  width: 50%;
+  padding: 1em;
   background-color: #add8e6;
   color: #000000;
   font-size: 1rem;
   font-weight: 600;
-  margin-left: 0.6em;
-  -webkit-transition: all 0.2s ease-in;
+  width: 16em;
   transition: all 0.2s ease-in;
 }
-
 main #content-div button:hover {
   cursor: pointer;
   background-color: #f5f5f5;
 }
-
 main #content-div button:active {
-  -webkit-transform: translateY(-2px);
-          transform: translateY(-2px);
+  transform: translateY(-2px);
 }
 
 footer {
@@ -218,7 +155,6 @@ footer {
   text-align: center;
   font-weight: 600;
 }
-
 footer ion-icon {
   color: #000000;
   text-decoration: none;
@@ -236,7 +172,7 @@ footer ion-icon {
 /* MEDIA QUERIES */
 @media only screen and (min-width: 320px) {
   html {
-    font-size: 60%;
+    font-size: 85%;
   }
   html header h1 {
     display: none;
@@ -244,29 +180,18 @@ footer ion-icon {
   html main {
     margin-top: -2.5em;
   }
-  html main #content-div button {
-    width: 100%;
-  }
   html footer {
     display: none;
   }
 }
-
 @media only screen and (min-width: 576px) {
   html {
-    font-size: 70%;
-  }
-  html main {
-    margin-top: -2em;
-  }
-  html main #content-div button {
-    width: 70%;
+    font-size: 85%;
   }
 }
-
 @media only screen and (min-width: 768px) {
   html {
-    font-size: 70%;
+    font-size: 100%;
   }
   html header h1 {
     display: block;
@@ -274,29 +199,12 @@ footer ion-icon {
   html main {
     margin-top: -5.5em;
   }
-  html main #content-div button {
-    width: 65%;
-  }
 }
-
 @media only screen and (min-width: 992px) {
-  html {
-    font-size: 90%;
-  }
   html main {
     margin-top: -6em;
-  }
-  html main #content-div button {
-    width: 60%;
   }
   html footer {
     display: block;
   }
-}
-
-@media only screen and (min-width: 1200px) {
-  html {
-    font-size: 100%;
-  }
-}
-/*# sourceMappingURL=main.css.map */
+}/*# sourceMappingURL=main.css.map */

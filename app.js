@@ -35,7 +35,7 @@ changeLocationBtn.addEventListener('click', openModal);
 saveBtn.addEventListener('click', submit);
 cancelBtn.addEventListener('click', closeModal);
 
-// Submit and close modal keydown event
+// Submit and close modal keyboard events
 document.addEventListener('keydown', (e) => {
   if (modal.classList.contains('show') && e.key == 'Escape') {
     closeModal();

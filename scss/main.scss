@@ -48,12 +48,13 @@ main {
         transform: translate3d(-50%, -50%, 0) rotate(360deg);
       }
     }
+
     @include animate(spinner, 1.5s, linear, infinite);
     transform: translate3d(-50%, -50%, 0);
     display: none;
-    border: 8px solid $silverColor;
+    border: 3px solid $silverColor;
     border-radius: 50%;
-    border-bottom: 8px solid #0000ff;
+    border-bottom: 3px solid #0000ff;
     height: 5em;
     width: 5em;
     position: absolute;
@@ -73,9 +74,10 @@ main {
     height: 12em;
     z-index: 2;
     opacity: 0;
-    border: 1px solid black;
+    border: none;
     padding: 2em;
     border-radius: 5px;
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
     transition: opacity 0.2s ease-in;
 
     .modal-container {
@@ -138,7 +140,7 @@ main {
   #content-div {
     margin-bottom: 2em;
     border-radius: 5px;
-    width: 40%;
+    width: 80%;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -158,13 +160,12 @@ main {
       margin-top: 2em;
       border-radius: 50px;
       border: none;
-      height: 3.5em;
-      width: 50%;
+      padding: 1em;
       background-color: $colorButtons;
       color: #000000;
       font-size: 1rem;
       font-weight: 600;
-      margin-left: 0.6em;
+      width: 16em;
       transition: all 0.2s ease-in;
 
       &:hover {
@@ -206,7 +207,7 @@ footer {
 /* MEDIA QUERIES */
 html {
   @include responsive($phone_port) {
-    font-size: 60%;
+    font-size: 85%;
 
     header {
       h1 {
@@ -216,12 +217,6 @@ html {
 
     main {
       margin-top: -2.5em;
-
-      #content-div {
-        button {
-          width: 100%;
-        }
-      }
     }
 
     footer {
@@ -230,21 +225,11 @@ html {
   }
 
   @include responsive(($phone_land)) {
-    font-size: 70%;
-
-    main {
-      margin-top: -2em;
-
-      #content-div {
-        button {
-          width: 70%;
-        }
-      }
-    }
+    font-size: 85%;
   }
 
   @include responsive(($tablet)) {
-    font-size: 70%;
+    font-size: 100%;
 
     header {
       h1 {
@@ -254,34 +239,16 @@ html {
 
     main {
       margin-top: -5.5em;
-
-      #content-div {
-        button {
-          width: 65%;
-        }
-      }
     }
   }
 
   @include responsive(($desktop)) {
-    font-size: 90%;
-
     main {
       margin-top: -6em;
-
-      #content-div {
-        button {
-          width: 60%;
-        }
-      }
     }
 
     footer {
       display: block;
     }
-  }
-
-  @include responsive(($large)) {
-    font-size: 100%;
   }
 }

@@ -1,6 +1,6 @@
 # Weather App
 
-<p>Simple API weather forecast app built with Javascript and Local Storage.</p>
+<p>API weather forecast app built with Javascript and Local Storage.</p>
 
 ## Links
 
