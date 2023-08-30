@@ -3,7 +3,7 @@
 * {
   box-sizing: border-box;
   font-family: "Montserrat", sans-serif;
-  color: #202020;
+  color: #282828;
 }
 
 body {
@@ -58,7 +58,7 @@ main .modal-popup {
   border: none;
   padding: 2em;
   border-radius: 5px;
-  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+  box-shadow: 0 2px 10px hsl(196, 94%, 44%);
   transition: opacity 0.2s ease-in;
 }
 main .modal-popup .modal-container {
@@ -79,10 +79,13 @@ main .modal-popup .modal-container .modal-form input {
   padding-left: 3em;
   height: 2.5em;
   width: 20em;
-  border-radius: 5px;
+  border-radius: 50px;
   font-size: 1rem;
   color: #000000;
   border: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+       appearance: none;
 }
 main .modal-popup .modal-container .modal-footer {
   display: flex;
@@ -90,57 +93,85 @@ main .modal-popup .modal-container .modal-footer {
   align-items: center;
   margin-top: 2.5em;
 }
-main .modal-popup .modal-container .modal-footer button {
+main .modal-popup .modal-container .modal-footer .save-btn {
   width: 100%;
   height: 2.2em;
-  background-color: #add8e6;
+  background-color: hsl(195, 53%, 65%);
+  color: white;
   padding: 0.3em;
-  border-radius: 5px;
+  border-radius: 50px;
+  box-shadow: 0 2px 5px hsl(195, 94%, 17%);
   border: none;
   margin: 0.3em;
   font-weight: 600;
   font-size: 1rem;
-  transition: all 0.2s ease-in;
 }
-main .modal-popup .modal-container .modal-footer button:hover {
+main .modal-popup .modal-container .modal-footer .save-btn:hover {
   cursor: pointer;
-  background-color: #f5f5f5;
+}
+main .modal-popup .modal-container .modal-footer .cancel-btn {
+  width: 100%;
+  height: 2.2em;
+  background-color: hsl(350, 88%, 73%);
+  color: white;
+  padding: 0.3em;
+  border-radius: 50px;
+  box-shadow: 0 2px 5px hsl(195, 94%, 17%);
+  border: none;
+  margin: 0.3em;
+  font-size: 1rem;
+}
+main .modal-popup .modal-container .modal-footer .cancel-btn:hover {
+  cursor: pointer;
 }
 main .modal-popup.show {
   opacity: 1;
 }
 main #content-div {
-  margin-bottom: 2em;
   border-radius: 5px;
   width: 80%;
   display: flex;
   flex-direction: column;
+  justify-content: center;
   align-items: center;
   z-index: 1;
 }
 main #content-div h2 {
   font-size: 2.5rem;
   text-align: center;
+  margin-top: -0.25em;
+}
+main #content-div h3 {
+  margin-top: 0.25em;
+  font-size: 3rem;
+}
+main #content-div .data-wrapper {
+  margin-top: -2em;
+  text-align: center;
 }
 main #content-div p {
-  margin-top: -0.3em;
   font-size: 90%;
 }
+main #content-div #humidity,
+main #content-div #feels-like {
+  font-size: 1rem;
+}
 main #content-div button {
-  margin-top: 2em;
+  margin-top: 1.5em;
   border-radius: 50px;
   border: none;
   padding: 1em;
-  background-color: #add8e6;
-  color: #000000;
+  background-color: hsl(195, 53%, 65%);
+  color: white;
   font-size: 1rem;
   font-weight: 600;
   width: 16em;
-  transition: all 0.2s ease-in;
+  box-shadow: 0 2px 5px hsl(195, 94%, 17%);
+  transition: background-color 0.2s ease-in;
 }
 main #content-div button:hover {
   cursor: pointer;
-  background-color: #f5f5f5;
+  background-color: hsl(195, 53%, 45%);
 }
 main #content-div button:active {
   transform: translateY(-2px);

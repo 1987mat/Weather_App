@@ -10,17 +10,19 @@ class UI {
 
   render(weather) {
     this.location.textContent = weather.name;
-    this.temp.textContent = `${kelvinToFah(weather.main.temp)}\u{02109};
+    this.temp.textContent = `${kelvinToFah(weather.main.temp)}\u{02109}
     `;
     this.icon.setAttribute(
       'src',
       `http://openweathermap.org/img/wn/${weather.weather[0].icon}@2x.png`
     );
     this.description.textContent = `${weather.weather[0].description.toUpperCase()}`;
-    this.feelsLike.textContent = `Feels Like: ${kelvinToFah(
-      weather.main.feels_like
-    )}\u{02109}`;
-    this.humidity.textContent = `Humidity: ${weather.main.humidity}%`;
+    this.feelsLike.innerHTML =
+      'Feels like: <strong>' +
+      kelvinToFah(weather.main.feels_like) +
+      '\u{02109}</strong>';
+    this.humidity.innerHTML =
+      'Humidity: <strong>' + weather.main.humidity + '%</strong>';
   }
 }
 
