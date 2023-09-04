@@ -16,13 +16,18 @@ class UI {
       'src',
       `http://openweathermap.org/img/wn/${weather.weather[0].icon}@2x.png`
     );
-    this.description.textContent = `${weather.weather[0].description.toUpperCase()}`;
+    this.description.textContent = `${
+      weather.weather[0].description.charAt(0).toUpperCase() +
+      weather.weather[0].description.slice(1)
+    }`;
     this.feelsLike.innerHTML =
-      'Feels like: <strong>' +
+      'Feels like <strong style="color:whitesmoke">' +
       kelvinToFah(weather.main.feels_like) +
       '\u{02109}</strong>';
     this.humidity.innerHTML =
-      'Humidity: <strong>' + weather.main.humidity + '%</strong>';
+      'Humidity: <strong style="color:whitesmoke">' +
+      weather.main.humidity +
+      '%</strong>';
   }
 }
 

@@ -140,10 +140,12 @@ main #content-div h2 {
   font-size: 2.5rem;
   text-align: center;
   margin-top: -0.25em;
+  color: whitesmoke;
 }
 main #content-div h3 {
   margin-top: 0.25em;
   font-size: 3rem;
+  color: whitesmoke;
 }
 main #content-div .data-wrapper {
   margin-top: -2em;
@@ -152,9 +154,14 @@ main #content-div .data-wrapper {
 main #content-div p {
   font-size: 90%;
 }
+main #content-div #description {
+  color: whitesmoke;
+  font-size: 1.25rem;
+}
 main #content-div #humidity,
 main #content-div #feels-like {
   font-size: 1rem;
+  color: hsl(195, 53%, 85%);
 }
 main #content-div button {
   margin-top: 1.5em;
@@ -162,7 +169,7 @@ main #content-div button {
   border: none;
   padding: 1em;
   background-color: hsl(195, 53%, 65%);
-  color: white;
+  color: whitesmoke;
   font-size: 1rem;
   font-weight: 600;
   width: 16em;
